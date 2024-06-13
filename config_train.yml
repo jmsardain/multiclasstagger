@@ -1,0 +1,12 @@
+data:
+  path_to_train: 'data/graphs_train.pt'
+  path_to_test: 'data/graphs_test.pt'
+  size_train: 0.80
+  path_to_save: "/home/jmsardain/MultiClassTagger/ckpts/PFN/"
+  model_name: "PFN_"
+
+architecture:
+  batch_size: 1024
+  n_epochs: 10
+  learning_rate: 0.001
+  choose_model: "PFN" 
