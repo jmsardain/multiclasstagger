@@ -108,6 +108,7 @@ def main():
             print("I am here")
 
             for ijet in range(Njets-1):
+                if ijet !=0: continue
                 if ijet%1000==0:
                     print("jet #{}".format(ijet))
                 graph_list.append(get_graphs(ijet, file))

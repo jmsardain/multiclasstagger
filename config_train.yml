@@ -6,7 +6,7 @@ data:
   model_name: "PFN_"
 
 architecture:
-  batch_size: 1024
+  batch_size: 1
   n_epochs: 10
   learning_rate: 0.001
-  choose_model: "PFN" 
+  choose_model: "PFN"

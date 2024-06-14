@@ -1,6 +1,6 @@
-import torch 
-import torch.nn as nn 
-
+import torch
+import torch.nn as nn
+import torch.optim as optim
 class ParticleFlowNetwork(nn.Module):
     r"""Parameters
     ----------
@@ -43,8 +43,9 @@ class ParticleFlowNetwork(nn.Module):
             f_layers.append(nn.Softmax(dim=1))
         self.fc = nn.Sequential(*f_layers)
 
-    def forward(self, points, features, lorentz_vectors, mask):
+    def forward(self, data, mask=None):
         # x: the feature vector initally read from the data structure, in dimension (N, C, P)
+        features = data.x
         x = self.input_bn(features)
         x = self.phi(x)
         if mask is not None:
